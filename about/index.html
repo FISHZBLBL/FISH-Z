@@ -1,0 +1,628 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="关于, ʕ •ᴥ•ʔ">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>关于 | ʕ •ᴥ•ʔ</title>
+    <link rel="icon" type="image/png" href="https://fish-z-1323797631.cos.ap-beijing.myqcloud.com/site-assets/favicon.webp">
+
+    <link rel="stylesheet" type="text/css" href="/FISH-Z/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/FISH-Z/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/FISH-Z/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/FISH-Z/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/FISH-Z/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/FISH-Z/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/FISH-Z/css/my.css?v=20260813-2">
+
+    <script src="/FISH-Z/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/FISH-Z/" class="waves-effect waves-light">
+                    
+                    <img src="https://fish-z-1323797631.cos.ap-beijing.myqcloud.com/site-assets/logo.webp" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">ʕ •ᴥ•ʔ</span>
+                </a>
+            </div>
+            
+
+<ul class="right nav-menu">
+  
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/FISH-Z/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  
+  
+  
+  
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    <style type="text/css">
+    /* don't remove. */
+    .about-cover {
+        height: 75vh;
+    }
+</style>
+
+<div class="bg-cover pd-header about-cover">
+    <div class="container">
+    <div class="row hero-copy-row">
+    <div class="col s10 offset-s1 m7 l6 hero-copy">
+        <div class="brand">
+            <div class="title">
+                
+                ZHY❤YYY
+                
+            </div>
+
+            <div class="description">
+                
+                <span id="subtitle"></span>
+                <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+                <script>
+                    var typed = new Typed("#subtitle", {
+                        strings: ['宝贝每天都要开心快乐呀！','有你的365天每天都很开心！'],
+                        startDelay: 300,
+                        typeSpeed: 100,
+                        loop: true,
+                        backSpeed: 50,
+                        showCursor: true
+                    });
+                </script>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    var bannerBaseUrl = 'https://fish-z-1323797631.cos.ap-beijing.myqcloud.com/site-assets/banner/';
+    if (bannerBaseUrl && bannerBaseUrl.charAt(bannerBaseUrl.length - 1) !== '/') {
+        bannerBaseUrl += '/';
+    }
+    var bannerExtension = 'jpg';
+    var bannerCount = Number('7');
+    var bannerIndex = 0;
+    var bannerInterval = Number('5000');
+    var activeBannerLayer = 0;
+
+    function bannerUrl(index) {
+        return bannerBaseUrl
+            ? bannerBaseUrl + index + '.' + bannerExtension
+            : "/FISH-Z/medias/banner/" + index + '.jpg';
+    }
+
+    function showBanner(index) {
+        var nextUrl = bannerUrl(index);
+        var image = new Image();
+        image.onload = function () {
+            var layers = document.querySelectorAll('.about-cover .banner-layer');
+            if (!layers.length) return;
+            var nextLayer = activeBannerLayer === 0 ? 1 : 0;
+            if (index === 0 && !layers[0].style.backgroundImage) nextLayer = 0;
+            layers[nextLayer].style.backgroundImage = 'url("' + nextUrl + '")';
+            layers[nextLayer].classList.add('is-active');
+            if (nextLayer !== activeBannerLayer) layers[activeBannerLayer].classList.remove('is-active');
+            activeBannerLayer = nextLayer;
+        };
+        image.src = nextUrl;
+    }
+
+    showBanner(bannerIndex);
+    for (var preloadIndex = 1; preloadIndex < bannerCount; preloadIndex++) {
+        var preloadImage = new Image();
+        preloadImage.src = bannerUrl(preloadIndex);
+    }
+    if (bannerCount > 1) {
+        setInterval(function () {
+            bannerIndex = (bannerIndex + 1) % bannerCount;
+            showBanner(bannerIndex);
+        }, bannerInterval);
+    }
+</script>
+
+
+    </div>
+</div>
+
+<main class="content">
+
+    <div id="aboutme" class="container about-container">
+        <div class="card">
+            <div class="card-content">
+                <div class="row">
+                    <div class="post-statis col l4 hide-on-med-and-down" data-aos="zoom-in-right">
+                        
+
+
+
+
+
+                    </div>
+                    <div class="col s12 m12 l4">
+                        <div class="profile center-align">
+                            <div class="avatar">
+                                <img src="https://fish-z-1323797631.cos.ap-beijing.myqcloud.com/site-assets/avatar.webp" alt="FISH_Z"
+                                     class="circle responsive-img avatar-img">
+                            </div>
+                            <div class="author">
+                                <div class="post-statis hide-on-large-only" data-aos="zoom-in-right">
+                                    
+
+
+
+
+
+                                </div>
+                                <div class="title">FISH_Z</div>
+                                <div class="career"></div>
+                                <div class="social-link hide-on-large-only" data-aos="zoom-in-left">
+                                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col l4 hide-on-med-and-down" data-aos="zoom-in-left">
+                        <div class="social-link">
+                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="introduction center-align" data-aos="fade-up">一直站在你周围陪伴你的宝贝。</div>
+
+                <style type="text/css">
+    #posts-chart,
+    #categories-chart,
+    #tags-chart {
+        width: 100%;
+        height: 300px;
+        margin: 0.5rem auto;
+        padding: 0.5rem;
+    }
+</style>
+
+<div id="postCharts" class="post-charts">
+    <div class="title center-align" data-aos="zoom-in-up">
+        <i class="far fa-bar-chart"></i>&nbsp;&nbsp;文章统计图
+    </div>
+    <div class="row">
+        <div class="chart col s12 m6 l4" data-aos="zoom-in-up">
+            <div id="posts-chart"></div>
+        </div>
+
+        <div class="chart col s12 m6 l4" data-aos="zoom-in-up">
+            <div id="categories-chart"></div>
+        </div>
+
+        <div class="chart col s12 m6 l4" data-aos="zoom-in-up">
+            <div id="tags-chart"></div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="/FISH-Z/libs/echarts/echarts.min.js"></script>
+<script>
+    let postsChart = echarts.init(document.getElementById('posts-chart'));
+    let categoriesChart = echarts.init(document.getElementById('categories-chart'));
+    let tagsChart = echarts.init(document.getElementById('tags-chart'));
+
+    
+
+    let postsOption = {
+        title: {
+            text: '文章发布统计图',
+            top: -5,
+            x: 'center'
+        },
+        tooltip: {
+            trigger: 'axis'
+        },
+        xAxis: {
+            type: 'category',
+            data: ["2025-08","2025-09","2025-10","2025-11","2025-12","2026-01","2026-02","2026-03","2026-04","2026-05","2026-06","2026-07","2026-08"]
+        },
+        yAxis: {
+            type: 'value',
+        },
+        series: [
+            {
+                name: '文章篇数',
+                type: 'line',
+                color: ['#6772e5'],
+                data: [0,0,0,0,0,0,0,0,0,0,0,0,0],
+                markPoint: {
+                    symbolSize: 45,
+                    color: ['#fa755a','#3ecf8e','#82d3f4'],
+                    data: [{
+                        type: 'max',
+                        itemStyle: {color: ['#3ecf8e']},
+                        name: '最大值'
+                    }, {
+                        type: 'min',
+                        itemStyle: {color: ['#fa755a']},
+                        name: '最小值'
+                    }]
+                },
+                markLine: {
+                    itemStyle: {color: ['#ab47bc']},
+                    data: [
+                        {type: 'average', name: '平均值'}
+                    ]
+                }
+            }
+        ]
+    };
+
+    
+
+    let categoriesOption = {
+        title: {
+            text: '文章分类统计图',
+            top: -4,
+            x: 'center'
+        },
+        tooltip: {
+            trigger: 'item',
+            formatter: "{a} <br/>{b} : {c} ({d}%)"
+        },
+        series: [
+            {
+                name: '分类',
+                type: 'pie',
+                radius: '50%',
+                color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
+                data: [],
+                itemStyle: {
+                    emphasis: {
+                        shadowBlur: 10,
+                        shadowOffsetX: 0,
+                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    }
+                }
+            }
+        ]
+    };
+
+    
+
+    let tagsOption = {
+        title: {
+            text: 'TOP10 标签统计图',
+            top: -5,
+            x: 'center'
+        },
+        tooltip: {},
+        xAxis: [
+            {
+                type: 'category',
+                data: []
+            }
+        ],
+        yAxis: [
+            {
+                type: 'value'
+            }
+        ],
+        series: [
+            {
+                type: 'bar',
+                color: ['#82d3f4'],
+                barWidth : 18,
+                data: [],
+                markPoint: {
+                    symbolSize: 45,
+                    data: [{
+                        type: 'max',
+                        itemStyle: {color: ['#3ecf8e']},
+                        name: '最大值'
+                    }, {
+                        type: 'min',
+                        itemStyle: {color: ['#fa755a']},
+                        name: '最小值'
+                    }],
+                },
+                markLine: {
+                    itemStyle: {color: ['#ab47bc']},
+                    data: [
+                        {type: 'average', name: '平均值'}
+                    ]
+                }
+            }
+        ]
+    };
+
+    // render the charts
+    postsChart.setOption(postsOption);
+    categoriesChart.setOption(categoriesOption);
+    tagsChart.setOption(tagsOption);
+</script>
+
+
+                
+
+                
+
+                
+
+            </div>
+        </div>
+    </div>
+</main>
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/FISH-Z/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #ECAD9E;
+    }
+
+    
+
+    @media only screen and (min-width: 901px) {
+        body .aplayer.aplayer-fixed.aplayer-narrow {
+            right: 0 !important;
+            left: 0 !important;
+            width: 100vw !important;
+            max-width: none !important;
+        }
+
+        body .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+            left: 0 !important;
+            width: 100vw !important;
+            max-width: none !important;
+            box-sizing: border-box !important;
+        }
+
+        body .aplayer.aplayer-fixed.aplayer-narrow .aplayer-info {
+            display: block !important;
+            width: calc(100vw - 72px) !important;
+            transform: none !important;
+        }
+    }
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="9137530411"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#ECAD9E'
+                   loop='all'
+                   order='list'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='false'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/FISH-Z/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2024-2026</span>
+            
+            <span id="year">2024</span>
+            <a href="/FISH-Z/about" target="_blank">FISH_Z</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link ">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <script>
+        window.FISH_Z_CONTENT_CONFIG = {
+            manifestUrl: /^(localhost|127\.0\.0\.1)$/.test(window.location.hostname)
+                ? '/FISH-Z/__content/articles.js'
+                : 'https://fish-z-1323797631.cos.ap-beijing.myqcloud.com/blog-content/articles.js',
+            siteRoot: '/FISH-Z/',
+            articlePath: '/FISH-Z/article/',
+            localContentBase: '/FISH-Z/__content/articles/'
+        };
+    </script>
+    <script src="/FISH-Z/js/dynamic-content.js"></script>
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal memory-search-modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <div>
+                <span class="memory-kicker">FIND A MEMORY</span>
+                <h2>搜索</h2>
+            </div>
+            <button type="button" class="modal-close search-close" aria-label="关闭搜索">
+                <i class="fas fa-times" aria-hidden="true"></i>
+            </button>
+        </div>
+        <label class="search-field" for="searchInput">
+            <i class="fas fa-search" aria-hidden="true"></i>
+            <input type="search" id="searchInput" name="s" placeholder="输入标题或摘要关键词" class="search-input" autocomplete="off">
+        </label>
+        <div id="searchResult" class="search-result-area" data-dynamic-search>
+            <div class="search-empty"><i class="far fa-file-alt"></i><span>输入关键词，寻找过去的故事</span></div>
+        </div>
+    </div>
+</div>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/FISH-Z/libs/materialize/materialize.min.js"></script>
+    <script src="/FISH-Z/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/FISH-Z/libs/aos/aos.js"></script>
+    <script src="/FISH-Z/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/FISH-Z/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/FISH-Z/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    
+
+    
+
+    
+
+	
+    
+
+    
+
+    
+
+    
+    <script src="/FISH-Z/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
