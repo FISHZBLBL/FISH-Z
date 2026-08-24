@@ -18,6 +18,9 @@
     }
 
     function withVersion(url, version) {
+        if (typeof url !== 'string' || !url) {
+            throw new Error('文章清单地址未配置');
+        }
         return url + (url.indexOf('?') === -1 ? '?' : '&') + 'v=' + encodeURIComponent(version || cacheKey());
     }
 
@@ -66,6 +69,8 @@
             var urls = Array.isArray(config.manifestUrls) && config.manifestUrls.length
                 ? config.manifestUrls
                 : [config.manifestUrl];
+            urls = urls.filter(function (url) { return typeof url === 'string' && url; });
+            if (!urls.length) return Promise.reject(new Error('文章清单地址未配置'));
             var manifests = [];
             var chain = Promise.resolve();
             urls.forEach(function (url, index) {
