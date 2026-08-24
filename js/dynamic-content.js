@@ -38,15 +38,47 @@
         });
     }
 
+    function loadOneManifest(url) {
+        window.FISH_Z_ARTICLES = null;
+        return loadScript(withVersion(url, cacheKey())).then(function () {
+            var manifest = window.FISH_Z_ARTICLES;
+            if (!manifest || !Array.isArray(manifest.articles)) {
+                throw new Error('文章清单格式不正确');
+            }
+            return manifest;
+        });
+    }
+
+    function mergeManifests(manifests) {
+        var articlesById = {};
+        manifests.forEach(function (manifest) {
+            manifest.articles.forEach(function (article) {
+                if (article && article.id) articlesById[article.id] = article;
+            });
+        });
+        var articles = Object.keys(articlesById).map(function (id) { return articlesById[id]; });
+        articles.sort(function (a, b) { return new Date(b.date) - new Date(a.date); });
+        return { version: 1, generatedAt: new Date().toISOString(), articles: articles };
+    }
+
     function loadManifest() {
         if (!manifestPromise) {
-            manifestPromise = loadScript(withVersion(config.manifestUrl, cacheKey())).then(function () {
-                var manifest = window.FISH_Z_ARTICLES;
-                if (!manifest || !Array.isArray(manifest.articles)) {
-                    throw new Error('文章清单格式不正确');
-                }
-                return manifest;
+            var urls = Array.isArray(config.manifestUrls) && config.manifestUrls.length
+                ? config.manifestUrls
+                : [config.manifestUrl];
+            var manifests = [];
+            var chain = Promise.resolve();
+            urls.forEach(function (url, index) {
+                chain = chain.then(function () {
+                    return loadOneManifest(url).then(function (manifest) {
+                        manifests.push(manifest);
+                    }).catch(function (error) {
+                        if (index === 0) throw error;
+                        if (window.console && console.warn) console.warn('可选文章清单暂时不可用:', url);
+                    });
+                });
             });
+            manifestPromise = chain.then(function () { return mergeManifests(manifests); });
         }
         return manifestPromise;
     }
@@ -195,7 +227,7 @@
         initArticle();
     }
 
-    window.FishZContent = { loadManifest: loadManifest, init: init };
+    window.FishZContent = { loadManifest: loadManifest, mergeManifests: mergeManifests, init: init };
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', init);
     } else {

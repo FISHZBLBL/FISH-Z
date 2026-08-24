@@ -297,11 +297,12 @@
 <div class="progress-bar"></div>
 
 
+    
     <script>
         window.FISH_Z_CONTENT_CONFIG = {
-            manifestUrl: /^(localhost|127\.0\.0\.1)$/.test(window.location.hostname)
-                ? '/FISH-Z/__content/articles.js'
-                : 'https://fish-z-1323797631.cos.ap-beijing.myqcloud.com/blog-content/articles.js',
+            manifestUrls: /^(localhost|127\.0\.0\.1)$/.test(window.location.hostname)
+                ? ['/FISH-Z/__content/articles.js', '/FISH-Z/__content/manifests/YYY.js']
+                : ["https://fish-z-1323797631.cos.ap-beijing.myqcloud.com/blog-content/articles.js","https://fish-z-1323797631.cos.ap-beijing.myqcloud.com/blog-content/manifests/YYY.js"],
             siteRoot: '/FISH-Z/',
             articlePath: '/FISH-Z/article/',
             localContentBase: '/FISH-Z/__content/articles/'
