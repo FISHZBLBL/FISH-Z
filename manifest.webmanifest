@@ -1,0 +1,24 @@
+{
+  "name": "24-1-15个人博客",
+  "short_name": "24-1-15",
+  "description": "FISH_Z 的个人博客与生活记录",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f7f8f8",
+  "theme_color": "#073d46",
+  "icons": [
+    {
+      "src": "medias/app-icons/app-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "medias/app-icons/app-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
